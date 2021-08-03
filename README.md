@@ -1,4 +1,4 @@
-# Circular Ripple Hover Effect
+# ScrollSpy
 
 ## DEMO Link
 
