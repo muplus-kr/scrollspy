@@ -1,16 +1,11 @@
 @charset "utf-8";
 
-#wrap {
-    min-width: 1200px;
-    min-height: 100%;
-    position: relative;
-}
-
 #header {
     position: fixed;
     width: 100%;
     left: 0;
     top: 0;
+    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,6 +13,9 @@
     background-color: #fff;
 }
 
+.container {
+    padding-top: 120px;
+}
 .submenu {
     position: fixed;
     left: 0;
@@ -25,6 +23,7 @@
     width: 100%;
     text-align: center;
     font-size: 0;
+    z-index: 100;
     background-color: #ddd;
 }
 .submenu li {
@@ -44,25 +43,92 @@
     color: #f00;
 }
 
-.container {
-    padding-top: 80px;
-}
-
-.cont {
+section {
+    position: relative;
+    width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+section p {
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+.txt {
+    position: absolute;
+    left: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
 }
 #section1 {
-    background-color: bisque;
+    background: yellowgreen;
 }
 #section2 {
-    background-color: aquamarine;
+    background: goldenrod;
+    overflow: hidden;
+    position: relative;
 }
 #section3 {
-    background-color: brown;
+    background: indianred;
 }
 #section4 {
-    background-color: darkcyan;
+    background: paleturquoise;
 }
-#section5 {
-    background-color: darkorange;
+.box_wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.box {
+    opacity: 1;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box h1 {
+    font-size: 50px;
+    text-align: center;
+}
+.box1 {
+    background: darkslategray;
+    width: 990px;
+    height: 780px;
+    right: 150px;
+    top: 160px;
+}
+.box2 {
+    background: crimson;
+    width: 364px;
+    height: 364px;
+    border-radius: 50%;
+    right: 100px;
+    bottom: 62px;
+}
+.box3 {
+    background: darkorchid;
+    width: 544px;
+    height: 736px;
+    left: 450px;
+    top: 0;
+}
+.box4 {
+    background: chocolate;
+    width: 654px;
+    height: 486px;
+    right: 200px;
+    top: 230px;
+}
+.box5 {
+    background: darkseagreen;
+    width: 500px;
+    height: 500px;
+    right: 900px;
+    bottom: 80px;
+    border-radius: 50%;
 }

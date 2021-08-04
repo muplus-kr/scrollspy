@@ -11,95 +11,63 @@
         <meta property="og:url" content="" />
         <meta name="google-site-verification" content="" />
         <meta name="format-detection" content="telephone=no" />
-        <title>scrollspy</title>
+        <title></title>
         <link rel="shortcut icon" type="image/ico" href="../../resources/images/common/favicon.ico" />
         <link rel="stylesheet" href="../resource/css/reset.css" type="text/css" />
         <link rel="stylesheet" href="../resource/css/font.css" type="text/css" />
         <link rel="stylesheet" href="../resource/css/common.css" type="text/css" />
 
         <script src="../resource/js/jquery-1.11.2.js"></script>
+        <script src="../resource/lib/gsap/gsap.min.js"></script>
+        <script src="../resource/lib/gsap/ScrollTrigger.min.js"></script>
         <script src="../resource/js/common.js"></script>
     </head>
     <body>
-        <div id="wrap">
-            <header id="header"><h1>헤더</h1></header>
-            <div class="container">
-                <ul class="submenu">
-                    <!-- ★★★ a의 rel값과 section의 id값을 같게 해주세요. ★★★ -->
-                    <li><a href="#none" rel="section1">section1</a></li>
-                    <li><a href="#none" rel="section2">section2</a></li>
-                    <li><a href="#none" rel="section3">section3</a></li>
-                    <li><a href="#none" rel="section4">section4</a></li>
-                    <li><a href="#none" rel="section5">section5</a></li>
-                </ul>
-                <section class="cont" id="section1"></section>
-                <section class="cont" id="section2"></section>
-                <section class="cont" id="section3"></section>
-                <section class="cont" id="section4"></section>
-                <section class="cont" id="section5"></section>
-            </div>
+        <header id="header"><h1>header</h1></header>
+        <div class="container">
+            <ul class="submenu">
+                <!-- ★★★ a의 rel값과 section의 id값을 같게 해주세요. ★★★ -->
+                <li><a href="#none" rel="section1">section1</a></li>
+                <li><a href="#none" rel="section2">section2</a></li>
+                <li><a href="#none" rel="section3">section3</a></li>
+                <li><a href="#none" rel="section4">section4</a></li>
+                <li><a href="#none" rel="section5">section5</a></li>
+            </ul>
+            <section id="section1">
+                <p>section1</p>
+            </section>
+            <section id="section2">
+                <p class="txt">
+                    section2 <br />
+                    고정된 영역
+                </p>
+                <div class="box_wrapper">
+                    <div class="box box1">
+                        <h1>box1</h1>
+                    </div>
+                    <div class="box box2">
+                        <h1>box2</h1>
+                    </div>
+                    <div class="box box3">
+                        <h1>box3</h1>
+                    </div>
+                    <div class="box box4">
+                        <h1>box4</h1>
+                    </div>
+                    <div class="box box5">
+                        <h1>box5</h1>
+                    </div>
+                </div>
+            </section>
+            <section id="section3">
+                <p>section3</p>
+            </section>
+            <section id="section4">
+                <p>section4</p>
+            </section>
+            <section id="section5">
+                <p>section5</p>
+            </section>
         </div>
-        <script>
-            $(document).ready(function () {
-                // 해당 섹션에 도달하면 메뉴 활성화
-                $(window).on("scroll", function () {
-                    // ★★★ subCont 변수에 공통으로 들어가는 섹션의 클래스명을 넣어주세요.
-                    var subCont = $(".cont");
-                    subCont.each(function (i, el) {
-                        var top = $(el).offset().top - 100;
-                        var bottom = top + $(el).height();
-                        var scroll = $(window).scrollTop();
-                        var id = $(el).attr("id");
-                        if (scroll > top && scroll < bottom) {
-                            // ★★★ 서브메뉴 클래스 이름을 넣어주세요.
-                            $(".submenu li a.on").removeClass("on");
-                            $(".submenu li a[rel=" + id + "]").addClass("on");
-                        }
-                        if (scroll === 0) {
-                            $(".submenu li a.on").removeClass("on");
-                        }
-                    });
-                });
-
-                // 메뉴 클릭하면 해당 섹션으로 이동
-                // ★★★ 서브메뉴의 클래스 이름을 넣어주세요.
-                scrollFunc(".submenu li a");
-
-                function scrollFunc(e) {
-                    var link = $(e);
-
-                    link.on("click", function () {
-                        var t = $(this).attr("rel");
-                        // ★★★ 해당 섹션에서 몇 만큼 이동할지 넣어주세요.
-                        // ex) header의 높이만큼 이동할 경우
-                        // animate({ scrollTop: $("#" + t).offset().top - ($("#header").height() - 1) }, 300);
-                        $("html, body")
-                            .stop()
-                            .animate({ scrollTop: $("#" + t).offset().top - ($(".submenu").height() - 1) }, 300);
-                        return false;
-                    });
-                }
-
-                // 위로 스크롤시 서브메뉴가 헤더 밑으로 붙게
-                var lastScrollTop = 0,
-                    delta = 15;
-                $(window).scroll(function (event) {
-                    var st = $(this).scrollTop();
-                    if (Math.abs(lastScrollTop - st) <= delta) return;
-
-                    if (st >= 290) {
-                        if (st > lastScrollTop && lastScrollTop > 0) {
-                            $("#header").css("top", "-80px");
-                            // ★★★ 서브메뉴 클래스 이름을 넣어주세요.
-                            $(".submenu").css("top", "0px");
-                        } else {
-                            $("#header").css("top", "0px");
-                            $(".submenu").css("top", "80px");
-                        }
-                        lastScrollTop = st;
-                    }
-                });
-            });
-        </script>
     </body>
 </html>
