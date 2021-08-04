@@ -1,7 +1,6 @@
 $(document).ready(function () {
     // 해당 섹션에 도달하면 메뉴 활성화
     $(window).on("scroll", function () {
-        // ★★★ subCont 변수에 공통으로 들어가는 섹션의 클래스명을 넣어주세요.
         var subCont = $("section");
         subCont.each(function (i, el) {
             var top = $(el).offset().top - 100;
@@ -9,7 +8,6 @@ $(document).ready(function () {
             var scroll = $(window).scrollTop();
             var id = $(el).attr("id");
             if (scroll > top && scroll < bottom) {
-                // ★★★ 서브메뉴 클래스 이름을 넣어주세요.
                 $(".submenu li a.on").removeClass("on");
                 $(".submenu li a[rel=" + id + "]").addClass("on");
             }
@@ -20,17 +18,12 @@ $(document).ready(function () {
     });
 
     // 메뉴 클릭하면 해당 섹션으로 이동
-    // ★★★ 서브메뉴의 클래스 이름을 넣어주세요.
     scrollFunc(".submenu li a");
 
     function scrollFunc(e) {
         var link = $(e);
-
         link.on("click", function () {
             var t = $(this).attr("rel");
-            // ★★★ 해당 섹션에서 몇 만큼 이동할지 넣어주세요.
-            // ex) header의 높이만큼 이동할 경우
-            // animate({ scrollTop: $("#" + t).offset().top - ($("#header").height() - 1) }, 300);
             $("html, body")
                 .stop()
                 .animate({ scrollTop: $("#" + t).offset().top - ($(".submenu").height() - 1) }, 300);
@@ -44,13 +37,10 @@ $(document).ready(function () {
     $(window).scroll(function (event) {
         var st = $(this).scrollTop();
         if (Math.abs(lastScrollTop - st) <= delta) return;
-
         if (st >= 290) {
             if (st > lastScrollTop && lastScrollTop > 0) {
                 $("#header").css("top", "-80px");
-                // ★★★ 서브메뉴 클래스 이름을 넣어주세요.
                 $(".submenu").css("top", "0px");
-                // ★★★ 섹션 클래스 이름을 넣어주세요.
                 $("section").css("padding-top", "40px");
             } else {
                 $("#header").css("top", "0px");
