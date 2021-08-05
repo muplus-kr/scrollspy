@@ -10,6 +10,7 @@ $(document).ready(function () {
             if (scroll > top && scroll < bottom) {
                 $(".submenu li a.on").removeClass("on");
                 $(".submenu li a[rel=" + id + "]").addClass("on");
+                // 서브메뉴에 가로스크롤 생길때 아래 if else if 문 추가
                 if ($(this).index() >= 3) {
                     $(".submenu")
                         .stop()
