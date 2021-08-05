@@ -10,6 +10,13 @@ $(document).ready(function () {
             if (scroll > top && scroll < bottom) {
                 $(".submenu li a.on").removeClass("on");
                 $(".submenu li a[rel=" + id + "]").addClass("on");
+                if ($(this).index() >= 3) {
+                    $(".submenu")
+                        .stop()
+                        .animate({ scrollLeft: 350 + "px" }, 200);
+                } else if ($(this).index() < 3) {
+                    $(".submenu").stop().animate({ scrollLeft: 0 }, 100);
+                }
             }
             if (scroll === 0) {
                 $(".submenu li a.on").removeClass("on");

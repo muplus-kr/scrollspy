@@ -5,7 +5,7 @@
     width: 100%;
     left: 0;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@
     width: 100%;
     text-align: center;
     font-size: 0;
-    z-index: 100;
+    z-index: 1000;
     background-color: #ddd;
 }
 .submenu li {
@@ -132,4 +132,22 @@ section p {
     right: 900px;
     bottom: 80px;
     border-radius: 50%;
+}
+
+@media (max-width: 1024px) {
+    .box {
+        display: none;
+    }
+}
+
+@media (max-width: 730px) {
+    .submenu {
+        overflow-x: auto;
+        width: 100%;
+        white-space: nowrap;
+    }
+    .txt {
+        position: static;
+        transform: none;
+    }
 }
