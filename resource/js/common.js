@@ -50,10 +50,11 @@ $(document).ready(function () {
             lastScrollTop = st;
         }
     });
+
+    // 트윈맥스
     ScrollTrigger.matchMedia({
         // 해상도 1024이상에서만 실행
         "(min-width:1024px)": function () {
-            // 가로 스크롤이 진행될 때 나오는 요소들을 선택
             var $box1 = document.querySelector(".box1");
             var $box2 = document.querySelector(".box2");
             var $box3 = document.querySelector(".box3");
@@ -61,18 +62,20 @@ $(document).ready(function () {
             var $box5 = document.querySelector(".box5");
             var tl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: "#section2", // 가로 스크롤이 진행되는 동안 고정되는 section의 class 또는 id
+                    trigger: "#section2",
                     pin: true,
                     scrub: 0.3,
                     start: "top top",
                     end: "+=300%",
                 },
             });
-            tl.from($box1, { x: "0", autoAlpha: 1, duration: 5, ease: "none", stagger: 1, delay: 2 }).to($box1, { x: "-200%", autoAlpha: 0, duration: 5, ease: "none", stagger: 1 });
-            tl.from($box2, { x: "200%", autoAlpha: 0, duration: 5, ease: "none", stagger: 1 }).to($box2, { x: "-500%", autoAlpha: 0, duration: 5, ease: "none", stagger: 1 });
-            tl.from($box3, { x: "300%", autoAlpha: 0, duration: 3, ease: "none", stagger: 1 }).to($box3, { x: "0", autoAlpha: 1, duration: 3, ease: "none", stagger: 1 });
-            tl.from($box4, { x: "300%", autoAlpha: 0, duration: 3, ease: "none", stagger: 1 }).to($box4, { x: "0", autoAlpha: 1, duration: 3, ease: "none", stagger: 1 });
-            tl.from($box5, { x: "300%", autoAlpha: 0, duration: 3, ease: "none", stagger: 1 }).to($box5, { x: "0", autoAlpha: 1, duration: 3, ease: "none", stagger: 1 });
+            tl.from($box1, { x: "0", autoAlpha: 1, duration: 3, ease: "none", stagger: 1 })
+                .from($box2, { x: "200%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 })
+                .to($box1, { x: "-200%", autoAlpha: 0, duration: 5, ease: "none", stagger: 1 }, "-=4")
+                .to($box2, { x: "-500%", autoAlpha: 0, duration: 5, ease: "none", stagger: 1 })
+                .fromTo($box3, { x: "500%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, { x: "0", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, "-=4")
+                .fromTo($box4, { x: "500%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, { x: "0", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 })
+                .fromTo($box5, { x: "500%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, { x: "0", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 });
         },
 
         // max-width로 지정할 경우
