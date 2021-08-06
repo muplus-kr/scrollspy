@@ -11,6 +11,7 @@ $(document).ready(function () {
                 $(".submenu li a.on").removeClass("on");
                 $(".submenu li a[rel=" + id + "]").addClass("on");
                 // 서브메뉴에 가로스크롤 생길때 아래 if else if 문 추가
+                // index 갯수와 scrollLeft 값은 메뉴 갯수에 따라 조절
                 if ($(this).index() >= 3) {
                     $(".submenu")
                         .stop()
