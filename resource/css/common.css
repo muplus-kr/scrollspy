@@ -108,7 +108,7 @@ section p {
     width: 364px;
     height: 364px;
     border-radius: 50%;
-    right: 300px;
+    right: 800px;
     bottom: 62px;
 }
 .box3 {
@@ -122,15 +122,15 @@ section p {
     background: chocolate;
     width: 654px;
     height: 486px;
-    right: 200px;
-    top: 230px;
+    right: 900px;
+    bottom: 0;
 }
 .box5 {
     background: darkseagreen;
     width: 500px;
     height: 500px;
-    right: 900px;
-    bottom: 80px;
+    right: 300px;
+    top: 80px;
     border-radius: 50%;
 }
 

@@ -73,24 +73,27 @@ $(document).ready(function () {
                 scrollTrigger: {
                     trigger: "#section2",
                     pin: true,
-                    scrub: 0.3,
+                    scrub: 1,
+                    // invalidateOnRefresh: true,
                     start: "top top",
                     end: "+=300%",
                 },
             });
-            tl.from($box1, { x: "0", autoAlpha: 1, duration: 3, ease: "none", stagger: 1 })
-                .from($box2, { x: "200%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 })
-                .to($box1, { x: "-200%", autoAlpha: 0, duration: 5, ease: "none", stagger: 1 }, "-=4")
-                .to($box2, { x: "-500%", autoAlpha: 0, duration: 5, ease: "none", stagger: 1 })
-                .fromTo($box3, { x: "500%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, { x: "0", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, "-=4")
-                .fromTo($box4, { x: "500%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, { x: "0", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 })
-                .fromTo($box5, { x: "500%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, { x: "0", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 });
+            // from($box1, { x: "0", autoAlpha: 1, duration: 3, ease: "none", stagger: 1 })
+            //     .from($box2, { x: "350%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 })
+            //     .to($box1, { x: "-600%", autoAlpha: 0, duration: 5, ease: "none", stagger: 1 }, "-=4")
+            //     .to($box2, { x: "-400%", autoAlpha: 0, duration: 5, ease: "none", stagger: 0 });
+            tl.fromTo($box1, { x: "0", autoAlpha: 1, duration: 3, ease: "none", stagger: 1 }, { x: "-400%", autoAlpha: 0, duration: 5, ease: "none", stagger: 1 }, "-=4")
+                .fromTo($box2, { x: "350%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, { x: "-600%", autoAlpha: 0.3, duration: 5, ease: "none", stagger: 1 }, "-=4")
+                .fromTo($box3, { x: "500%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, { x: "-120%", autoAlpha: 0.3, duration: 5, ease: "none", stagger: 1 }, "-=4")
+                .fromTo($box4, { x: "500%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, { x: "0", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, "-=4")
+                .fromTo($box5, { x: "500%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, { x: "0", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, "-=4");
         },
 
         // max-width로 지정할 경우
         // "(max-width:1024px)": function() {}
 
-        // 모든디바이스로 지정할 경우
+        // 모든 디바이스로 지정할 경우
         // "all": function() {}
     });
 });
