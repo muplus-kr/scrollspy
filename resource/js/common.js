@@ -83,6 +83,7 @@ $(document).ready(function () {
             //     .from($box2, { x: "350%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 })
             //     .to($box1, { x: "-600%", autoAlpha: 0, duration: 5, ease: "none", stagger: 1 }, "-=4")
             //     .to($box2, { x: "-400%", autoAlpha: 0, duration: 5, ease: "none", stagger: 0 });
+
             tl.fromTo($box1, { x: "0", autoAlpha: 1, duration: 3, ease: "none", stagger: 1 }, { x: "-400%", autoAlpha: 0, duration: 5, ease: "none", stagger: 1 }, "-=4")
                 .fromTo($box2, { x: "350%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, { x: "-600%", autoAlpha: 0.3, duration: 5, ease: "none", stagger: 1 }, "-=4")
                 .fromTo($box3, { x: "500%", autoAlpha: 1, duration: 5, ease: "none", stagger: 1 }, { x: "-120%", autoAlpha: 0.3, duration: 5, ease: "none", stagger: 1 }, "-=4")
@@ -96,4 +97,14 @@ $(document).ready(function () {
         // 모든 디바이스로 지정할 경우
         // "all": function() {}
     });
+    // gsap.to("#wrap", {
+    //     yPercent: -100,
+    //     y: "100vh",
+    //     scrollTrigger: {
+    //         scrub: 1,
+    //         trigger: ".container",
+    //         start: "top top",
+    //         end: document.querySelector(".container").clientHeight,
+    //     },
+    // });
 });

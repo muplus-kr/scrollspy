@@ -8,6 +8,7 @@
     font-family: "NotoSans", "돋움", "Dotum", sans-serif;
     letter-spacing: -0.5px;
     box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
 }
 html,
 body {
