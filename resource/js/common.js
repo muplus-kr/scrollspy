@@ -96,7 +96,7 @@ $(document).ready(function () {
     // 스크롤 부드럽게
     $("html").niceScroll({
         horizrailenabled: false,
-        scrollspeed: 100,
+        scrollspeed: 50,
         mousescrollstep: 30,
     });
 
