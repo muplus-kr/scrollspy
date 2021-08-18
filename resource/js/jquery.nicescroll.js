@@ -300,7 +300,7 @@
                         : 1 === e.deltaMode && ((r = ((-e.deltaX * M.mousescrollstep * 50) / 80) | 0), (i = ((-e.deltaY * M.mousescrollstep * 50) / 80) | 0)),
                     o && M.oneaxismousemode && 0 === r && i && ((r = i), (i = 0), t && (r < 0 ? T.getScrollLeft() >= T.page.maxw : T.getScrollLeft() <= 0) && ((i = r), (r = 0))),
                     T.isrtlmode && (r = -r),
-                    z(r, i, t, !0) ? void (t && (q = !0)) : ((q = !1), e.stopImmediatePropagation(), e.preventDefault()))
+                    z(r, i, t, !0) ? void (t && (q = !0)) : ((q = !1), e.stopImmediatePropagation()))
                 );
             }
             var T = this;
